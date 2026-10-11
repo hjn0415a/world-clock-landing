@@ -252,7 +252,7 @@
   .footer-links a:hover{color:var(--ink)}
 
   @media (prefers-reduced-motion:reduce){ * { transition:none !important } }
-  html,body{margin:0}
+  [hidden]{display:none!important}
 </style>
 </head>
 <body>
@@ -279,7 +279,7 @@
         <svg viewBox="0 0 24 24" fill="none" id="smartIcon"><path d="M12 2a1 1 0 0 1 1 1v12.6l3.3-3.3a1 1 0 1 1 1.4 1.4l-5 5a1 1 0 0 1-1.4 0l-5-5a1 1 0 1 1 1.4-1.4l3.3 3.3V3a1 1 0 0 1 1-1Z" fill="currentColor"/><path d="M5 20a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1Z" fill="currentColor"/></svg>
         <span id="smartLabel">무료로 다운로드</span>
       </a>
-      <span class="hero-sub">기기를 자동으로 확인해 알맞은 스토어로 연결돼요</span>
+      <span class="hero-sub">기기를 자동으로 확인해 알맞은 스토어로 연결됩니다</span>
     </div>
 
     <div class="ref-card">
@@ -443,16 +443,21 @@
     var label = document.getElementById("smartLabel");
     var note = document.getElementById("detectedOs");
 
+    var playBadge = document.getElementById("playBadge");
+    var appleBadge = document.getElementById("appleBadge");
+
     if (os === "ios") {
       link.href = APPLE_URL;
       icon.innerHTML = APPLE_ICON;
       label.textContent = "App Store에서 받기";
       if (note) note.textContent = "iPhone";
+      if (playBadge) playBadge.hidden = true;
     } else if (os === "android") {
       link.href = PLAY_URL;
       icon.innerHTML = ANDROID_ICON;
       label.textContent = "Google Play에서 받기";
       if (note) note.textContent = "Android";
+      if (appleBadge) appleBadge.hidden = true;
     } else {
       link.href = PLAY_URL;
       label.textContent = "다운로드 (PC에서는 아래 스토어 선택)";
