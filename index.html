@@ -50,7 +50,7 @@
     margin:0;
   }
   p{margin:0}
-  a{color:inherit}
+  a{color:inherit;-webkit-tap-highlight-color:transparent}
   img{max-width:100%;display:block}
   .tabular{font-variant-numeric:tabular-nums}
   button{font-family:inherit}
@@ -100,7 +100,7 @@
     box-shadow:0 14px 28px -10px rgba(59,111,224,0.45);
     transition:transform .15s ease;
   }
-  .btn-primary:hover{transform:translateY(-1px)}
+  @media (hover:hover){ .btn-primary:hover{transform:translateY(-1px)} }
   .btn-primary svg{width:20px;height:20px;flex:none}
   .hero-sub{font-size:13px;color:var(--ink-faint)}
 
@@ -234,7 +234,7 @@
     background:var(--bg);
     transition:background .15s ease;
   }
-  .store-badge:hover{background:var(--surface)}
+  @media (hover:hover){ .store-badge:hover{background:var(--surface)} }
   .store-badge svg{width:24px;height:24px;flex:none}
   .store-badge .lines{text-align:left;line-height:1.2}
   .store-badge .lines .small{font-size:10px;color:var(--ink-faint)}
@@ -249,7 +249,7 @@
   .footer-brand img{width:20px;height:20px;border-radius:6px}
   .footer-links{display:flex;gap:18px;font-size:13px;color:var(--ink-faint)}
   .footer-links a{text-decoration:none}
-  .footer-links a:hover{color:var(--ink)}
+  @media (hover:hover){ .footer-links a:hover{color:var(--ink)} }
 
   @media (prefers-reduced-motion:reduce){ * { transition:none !important } }
   [hidden]{display:none!important}
